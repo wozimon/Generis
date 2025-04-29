@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио safda fang</title> <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Портфолио <span class="gradient-text">safda fang</span></h1>
+        <p>Начинающий разработчик</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Добро пожаловать!</h2>
+            <p>Привет! Мне нравится программировать и "создавать игры". Этот сайт я сделал, чтобы показать свой проект - простую, но (надеюсь!) интересную пиксельную головоломку.</p>
+        </section>
+
+        <section id="play-game">
+            <h2>Об Игре</h2>
+            <p>Это головоломка, где нужно провести белый квадратик к серому выходу. Главная фишка - уровни не повторяются. Они создаются случайно прямо во время игры с помощью специального алгоритма.</p>
+            <p>Я выбрал простой черно-белый стиль, чтобы ничего не отвлекало от решения задачки и чтобы игра выглядела немного как из старых времен.</p>
+            <a href="game.html" class="button">Играть!</a>
+        </section>
+
+        <section id="about">
+            <h2>Обо мне и проекте</h2>
+            <p>Меня зовут safda fang, я учусь в 11В классе Лицея №141 и увлекаюсь программированием. Мне интересно придумывать игровую логику и воплощать идеи в коде.</p>
+            <p>Этот сайт и игру я сделал с помощью: <strong>JavaScript</strong> для всей логики игры и генерации уровней, <strong>HTML</strong> для структуры страниц и <strong>CSS</strong> для оформления. Для рисования игры используется элемент HTML5 Canvas.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Если хотите что-то спросить или просто написать:</p>
+            <ul>
+                <li>Email: <a href="mailto:safdaokgg@gmail.com">safdaokgg@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/wozimon" target="_blank" rel="noopener noreferrer">github.com/wozimon</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

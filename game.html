@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>игра Процедурная Головоломка</title> <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><span class="gradient-text">Процедурная Головоломка</span></h1>
+        <p><a href="index.html">&larr; На главную страницу портфолио</a></p>
+    </header>
+
+    <main>
+        <section id="game-area">
+            <p style="text-align: center;">Проведите белый квадрат к серому выходу, используя стрелки на клавиатуре. Каждый раз новый лабиринт.</p>
+
+            <div class="game-frame">
+                <div class="game-info">
+                    Уровень: <span id="level-counter">1</span>
+                </div>
+
+                <canvas id="gameCanvas" width="480" height="480">
+                    браузер не поддерживает HTML5 Canvas.
+                </canvas>
+
+                <div class="game-controls">
+                     <p><strong>Управление:</strong> Клавиши со стрелками.</p>
+                 </div>
+            </div>
+
+            </section>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
