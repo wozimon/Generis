@@ -88,7 +88,7 @@ function generateLevel(playerStart, goalStart) {
         pathFound = bfsPathExists(newGrid, playerStart, goalStart);
     }
      if (!pathFound) {
-        console.error(`Failed to generate level with path after ${maxAttempts} attempts!`);
+        console.error(`Ошибка генерации ${maxAttempts} попыток`);
     }
     return newGrid;
 }
@@ -130,7 +130,7 @@ function handleKeyDown(event) {
             playerPos.y = newY;
 
             if (playerPos.x === goalPos.x && playerPos.y === goalPos.y) {
-                console.log(`Level ${currentLevel} complete! Generating next level...`);
+                console.log(`Уровень ${currentLevel} закончен, генерирую следующий`);
                 currentLevel++;
                 startNewLevel();
                 if (levelCounterElement) {
