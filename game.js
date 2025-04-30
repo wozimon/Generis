@@ -66,7 +66,7 @@ function bfsPathExists(currentGrid, start, end) {
 }
 
 function generateLevel(playerStart, goalStart) {
-    console.log(`Generating level ${currentLevel} for Player: ${playerStart.x},${playerStart.y} Goal: ${goalStart.x},${goalStart.y}`);
+    console.log(`Создание уровня ${currentLevel} координаты: ${playerStart.x},${playerStart.y} цель: ${goalStart.x},${goalStart.y}`);
     let newGrid;
     let pathFound = false;
     let attempts = 0;
