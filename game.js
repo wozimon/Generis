@@ -163,7 +163,7 @@ function startNewLevel() {
 }
 
 function initGame() {
-    console.log("Initializing game...");
+    console.log("Инициализирую игру");
     currentLevel = 1;
     startNewLevel();
     requestAnimationFrame(gameLoop);
